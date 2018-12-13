@@ -35,6 +35,6 @@
 - Waveshare e-paper displays with SPI: http://forum.arduino.cc/index.php?topic=487007.0
 - Good Dispay ePaper for Arduino : https://forum.arduino.cc/index.php?topic=436411.0
 
-### Version 1.0.3
-- preliminary version, under construction
+### Version 1.0.6
+- preliminary version
 - based on GxEPD2 Version 1.1.0
