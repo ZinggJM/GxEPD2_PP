@@ -54,19 +54,19 @@ GxEPD2_BW<GxEPD2_154, GxEPD2_154::HEIGHT> display(GxEPD2_154(/*CS=D5*/ SS, /*DC=
 //GxEPD2_3C<GxEPD2_750c, GxEPD2_750c::HEIGHT / 4 > display(GxEPD2_750c(/*CS=D5*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 #endif
 
-// select only one to fit in code space
+// comment out unused bitmaps to reduce code space used
 #include "bitmaps/Bitmaps200x200.h" // 1.54" b/w
-//#include "bitmaps/Bitmaps128x250.h" // 2.13" b/w
-//#include "bitmaps/Bitmaps128x296.h" // 2.9"  b/w
-//#include "bitmaps/Bitmaps176x264.h" // 2.7"  b/w
-////#include "bitmaps/Bitmaps400x300.h" // 4.2"  b/w // not enough code space
-////#include "bitmaps/Bitmaps640x384.h" // 7.5"  b/w // not enough code space
+#include "bitmaps/Bitmaps128x250.h" // 2.13" b/w
+#include "bitmaps/Bitmaps128x296.h" // 2.9"  b/w
+#include "bitmaps/Bitmaps176x264.h" // 2.7"  b/w
+#include "bitmaps/Bitmaps400x300.h" // 4.2"  b/w
+//#include "bitmaps/Bitmaps640x384.h" // 7.5"  b/w // can't select together with the others for Photon
 // 3-color
-//#include "bitmaps/Bitmaps3c200x200.h" // 1.54" b/w/r
-//#include "bitmaps/Bitmaps3c104x212.h" // 2.13" b/w/r
-//#include "bitmaps/Bitmaps3c128x296.h" // 2.9"  b/w/r
-//#include "bitmaps/Bitmaps3c176x264.h" // 2.7"  b/w/r
-////#include "bitmaps/Bitmaps3c400x300.h" // 4.2"  b/w/r // not enough code space
+#include "bitmaps/Bitmaps3c200x200.h" // 1.54" b/w/r
+#include "bitmaps/Bitmaps3c104x212.h" // 2.13" b/w/r
+#include "bitmaps/Bitmaps3c128x296.h" // 2.9"  b/w/r
+#include "bitmaps/Bitmaps3c176x264.h" // 2.7"  b/w/r
+#include "bitmaps/Bitmaps3c400x300.h" // 4.2"  b/w/r
 
 void setup()
 {
@@ -593,7 +593,7 @@ void drawBitmaps640x384()
 #else
   const unsigned char* bitmaps[] = {}; // not enough code space
 #endif
-  if (display.epd2.panel == GxEPD2::GDEW075T8)
+  if ((display.epd2.panel == GxEPD2::GDEW075T8) || (display.epd2.panel == GxEPD2::GDEW075Z09))
   {
     for (uint16_t i = 0; i < sizeof(bitmaps) / sizeof(char*); i++)
     {

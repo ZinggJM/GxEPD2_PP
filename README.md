@@ -30,11 +30,18 @@
  - either through the template class instance methods that forward calls to the base display class
  - or directy using an instance of a base display class and calling its methods directly
 
+### Supporting Particle Community Forum Topic:
+
+- https://community.particle.io/t/gxepd2-pp-particle-display-library-for-spi-e-paper-displays/46305
+
 ### Supporting Arduino Forum Topics:
 
 - Waveshare e-paper displays with SPI: http://forum.arduino.cc/index.php?topic=487007.0
 - Good Dispay ePaper for Arduino : https://forum.arduino.cc/index.php?topic=436411.0
 
-### Version 1.0.6
+### Version 1.0.7
+- fix drawImage(...) overloaded methods signature matching abiguity
+- preliminary version
+#### Version 1.0.6
 - preliminary version
 - based on GxEPD2 Version 1.1.0
