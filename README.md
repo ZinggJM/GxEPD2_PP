@@ -39,7 +39,14 @@
 - Waveshare e-paper displays with SPI: http://forum.arduino.cc/index.php?topic=487007.0
 - Good Dispay ePaper for Arduino : https://forum.arduino.cc/index.php?topic=436411.0
 
-### Version 1.0.7
+### Version 1.0.9
+- added support for GDEW029T5
+- fixed (added) clipping for partial window
+- fixed (added) powerOff() after full update (partial update keeps power on)
+- added hibernate() for minimum power use by displays that support it
+#### Version 1.0.8
+- retired, wrong dependency in GxEPD2_PP_Example
+#### Version 1.0.7
 - fix drawImage(...) overloaded methods signature matching abiguity
 - preliminary version
 #### Version 1.0.6

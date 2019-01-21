@@ -1,7 +1,7 @@
 // Display Library for SPI e-paper panels from Dalian Good Display and boards from Waveshare.
 // Requires HW SPI and Adafruit_GFX. Caution: these e-papers require 3.3V supply AND data lines!
 //
-// based on Demo Example from Good Display: http://www.good-display.com/download_list/downloadcategoryid=34&isMode=false.html
+// based on Demo Example from Good Display: http://www.e-paper-display.com/download_list/downloadcategoryid=34&isMode=false.html
 //
 // Author: Jean-Marc Zingg
 //
@@ -25,6 +25,11 @@ class GxEPD2_GFX : public Adafruit_GFX
     virtual void fillScreen(uint16_t color) = 0; // 0x0 black, >0x0 white, to buffer
     virtual void display(bool partial_update_mode = false) = 0;
     virtual void setFullWindow() = 0;
+    // setPartialWindow, use parameters according to actual rotation.
+    // x and w should be multiple of 8, for rotation 0 or 2,
+    // y and h should be multiple of 8, for rotation 1 or 3,
+    // else window is increased as needed, 
+    // this is an addressing limitation of the e-paper controllers
     virtual void setPartialWindow(uint16_t x, uint16_t y, uint16_t w, uint16_t h) = 0;
     virtual void firstPage() = 0;
     virtual bool nextPage() = 0;
@@ -41,6 +46,8 @@ class GxEPD2_GFX : public Adafruit_GFX
     virtual void drawImage(const uint8_t* black, const uint8_t* color, int16_t x, int16_t y, int16_t w, int16_t h, bool invert, bool mirror_y, bool pgm) = 0;
     virtual void refresh(bool partial_update_mode = false) = 0; // screen refresh from controller memory to full screen
     virtual void refresh(int16_t x, int16_t y, int16_t w, int16_t h) = 0; // screen refresh from controller memory, partial screen
+    virtual void powerOff() = 0; // turns off generation of panel driving voltages, avoids screen fading over time
+    virtual void hibernate() = 0; // turns powerOff() and sets controller to deep sleep for minimum power use, ONLY if wakeable by RST (rst >= 0)
   public:
     GxEPD2_EPD& epd2;
 };
