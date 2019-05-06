@@ -7,8 +7,9 @@
 - and SPI e-paper boards from Waveshare
 
 ### important note :
- - these displays are for 3.3V supply and 3.3V data lines.
- - never connect data lines directly to 5V data pins.
+- the display panels are for 3.3V supply and 3.3V data lines
+- never connect data lines directly to 5V data pins.
+- the actual Waveshare display boards now have level converters and series regulator, safe for 5V
 
 ### Paged Drawing, Picture Loop
  - This library uses paged drawing to limit RAM use and cope with missing single pixel update support
@@ -39,6 +40,37 @@
 - Waveshare e-paper displays with SPI: http://forum.arduino.cc/index.php?topic=487007.0
 - Good Dispay ePaper for Arduino : https://forum.arduino.cc/index.php?topic=436411.0
 
+### Note on documentation
+- GxEPD2 uses Adafruit_GFX for Graphics and Text support, which is well documented there
+- GxEPD2 uses meaningful method names, and has some comments in the header files
+- consult the header files GxEPD2_BW.h, GxEPD2_3C.h and GxEPD2_GFX.h
+- for the concept of paged drawing and picture loop see: 
+- https://github.com/olikraus/u8glib/wiki/tpictureloop
+
+### Supported SPI e-paper panels from Good Display:
+- GDEP015OC1      1.54" b/w
+- GDEW0154Z04   1.54" b/w/r 200x200
+- GDE0213B1         2.13" b/w
+- GDEH0213B72       2.13" b/w, replacement for GDE0213B1
+- GDEW0213I5F    2.13" b/w flexible
+- GDEW0213Z16   2.13" b/w/r
+- GDEH029A1        2.9" b/w
+- GDEW029T5       2.9" b/w
+- GDEW029Z10     2.9" b/w/r
+- GDEW027C44     2.7" b/w/r
+- GDEW027W3      2.7" b/w
+- GDEW042T2        4.2" b/w
+- GDEW042Z15      4.2" b/w/r
+- GDEW0583T7      5.83" b/w
+- GDEW075T8        7.5" b/w
+- GDEW075Z09      7.5" b/w/r
+#### Supported SPI e-paper panels & boards from Waveshare: compare with Good Display, same panel
+#### other supported panels
+- ED060SCT        6" grey levels, on Waveshare e-Paper IT8951 Driver HAT
+
+### Version 1.1.0
+- corresponds to GxEPD2 Version 1.1.6
+- added support for GDEH0213B72 2.13" b/w, replacement for GDE0213B1
 ### Version 1.0.9
 - added support for GDEW029T5
 - fixed (added) clipping for partial window
