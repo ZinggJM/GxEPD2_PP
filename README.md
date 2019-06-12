@@ -68,6 +68,11 @@
 #### other supported panels
 - ED060SCT        6" grey levels, on Waveshare e-Paper IT8951 Driver HAT
 
+### Version 1.1.0+
+- added GxEPD2_PP_WiFi_Example, for bitmap download from web
+- only download from http: works, would need help for https:
+- only on GitHub, to avoid the need to increase the version for publish
+- this is preliminary!
 ### Version 1.1.0
 - corresponds to GxEPD2 Version 1.1.6
 - added support for GDEH0213B72 2.13" b/w, replacement for GDE0213B1
