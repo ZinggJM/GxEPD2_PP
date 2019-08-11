@@ -40,10 +40,13 @@
 //GxEPD2_BW<GxEPD2_154, GxEPD2_154::HEIGHT> display(GxEPD2_154(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_BW<GxEPD2_213, GxEPD2_213::HEIGHT> display(GxEPD2_213(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4)); // GDE0213B1, phased out
 GxEPD2_BW<GxEPD2_213_B72, GxEPD2_213_B72::HEIGHT> display(GxEPD2_213_B72(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4)); // GDEH0213B72
+//GxEPD2_BW<GxEPD2_213_B73, GxEPD2_213_B73::HEIGHT> display(GxEPD2_213_B73(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4)); // GDEH0213B73
 //GxEPD2_BW<GxEPD2_213_flex, GxEPD2_213_flex::HEIGHT> display(GxEPD2_213_flex(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4)); // GDEW0213I5F
 //GxEPD2_BW<GxEPD2_290, GxEPD2_290::HEIGHT> display(GxEPD2_290(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_BW<GxEPD2_290_T5, GxEPD2_290_T5::HEIGHT> display(GxEPD2_290_T5(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4)); // GDEW029T5
+//GxEPD2_BW<GxEPD2_260, GxEPD2_260::HEIGHT> display(GxEPD2_260(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_BW<GxEPD2_270, GxEPD2_270::HEIGHT> display(GxEPD2_270(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
+//GxEPD2_BW<GxEPD2_371, GxEPD2_371::HEIGHT> display(GxEPD2_371(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_BW<GxEPD2_420, GxEPD2_420::HEIGHT> display(GxEPD2_420(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_BW < GxEPD2_583, GxEPD2_583::HEIGHT / 2 > display(GxEPD2_583(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_BW < GxEPD2_750, GxEPD2_750::HEIGHT / 2 > display(GxEPD2_750(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
@@ -55,6 +58,7 @@ GxEPD2_BW<GxEPD2_213_B72, GxEPD2_213_B72::HEIGHT> display(GxEPD2_213_B72(/*CS=A2
 //GxEPD2_3C<GxEPD2_420c, GxEPD2_420c::HEIGHT> display(GxEPD2_420c(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_3C<GxEPD2_583c, GxEPD2_583c::HEIGHT / 4 > display(GxEPD2_583c(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
 //GxEPD2_3C<GxEPD2_750c, GxEPD2_750c::HEIGHT / 4 > display(GxEPD2_750c(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4));
+//GxEPD2_3C<GxEPD2_750c_Z08, GxEPD2_750c_Z08::HEIGHT / 4 > display(GxEPD2_750c_Z08(/*CS=A2*/ SS, /*DC=*/ A1, /*RST=*/ A0, /*BUSY=*/ D4)); // GDEW075Z08 800x480
 #endif
 
 // comment out unused bitmaps to reduce code space used
@@ -62,7 +66,9 @@ GxEPD2_BW<GxEPD2_213_B72, GxEPD2_213_B72::HEIGHT> display(GxEPD2_213_B72(/*CS=A2
 #include "bitmaps/Bitmaps104x212.h" // 2.13" b/w flexible GDEW0213I5F
 #include "bitmaps/Bitmaps128x250.h" // 2.13" b/w
 #include "bitmaps/Bitmaps128x296.h" // 2.9"  b/w
+#include "bitmaps/Bitmaps152x296.h" // 2.6"  b/w
 #include "bitmaps/Bitmaps176x264.h" // 2.7"  b/w
+#include "bitmaps/Bitmaps240x416.h" // 3.71"  b/w
 #include "bitmaps/Bitmaps400x300.h" // 4.2"  b/w
 //#include "bitmaps/Bitmaps640x384.h" // 7.5"  b/w // can't select together with the others for Photon
 // 3-color
@@ -71,6 +77,8 @@ GxEPD2_BW<GxEPD2_213_B72, GxEPD2_213_B72::HEIGHT> display(GxEPD2_213_B72(/*CS=A2
 #include "bitmaps/Bitmaps3c128x296.h" // 2.9"  b/w/r
 #include "bitmaps/Bitmaps3c176x264.h" // 2.7"  b/w/r
 #include "bitmaps/Bitmaps3c400x300.h" // 4.2"  b/w/r
+//#include "bitmaps/Bitmaps3c800x480.h" // 7.5"  b/w/r
+//#include "bitmaps/WS_Bitmaps800x600.h" // 6.0"  grey
 
 void setup()
 {
@@ -544,11 +552,20 @@ void drawBitmaps()
 #ifdef _GxBitmaps3c128x296_H_
   drawBitmaps3c128x296();
 #endif
+#ifdef _GxBitmaps152x296_H_
+  drawBitmaps152x296();
+#endif
 #ifdef _GxBitmaps3c176x264_H_
   drawBitmaps3c176x264();
 #endif
+#ifdef _GxBitmaps240x416_H_
+  drawBitmaps240x416();
+#endif
 #ifdef _GxBitmaps3c400x300_H_
   drawBitmaps3c400x300();
+#endif
+#ifdef _GxBitmaps3c800x480_H_
+  drawBitmaps3c800x480();
 #endif
   // show these after the specific bitmaps
 #ifdef _GxBitmaps200x200_H_
@@ -736,6 +753,37 @@ void drawBitmaps128x296()
 }
 #endif
 
+#ifdef _GxBitmaps152x296_H_
+void drawBitmaps152x296()
+{
+#if !defined(__AVR)
+  const unsigned char* bitmaps[] =
+  {
+    Bitmap152x296_1, Bitmap152x296_2, Bitmap152x296_3
+  };
+#else
+  const unsigned char* bitmaps[] =
+  {
+    Bitmap152x296_1, Bitmap152x296_2, Bitmap152x296_3
+  };
+#endif
+  if (display.epd2.panel == GxEPD2::GDEW026T0)
+  {
+    for (uint16_t i = 0; i < sizeof(bitmaps) / sizeof(char*); i++)
+    {
+      display.firstPage();
+      do
+      {
+        display.fillScreen(GxEPD_WHITE);
+        display.drawInvertedBitmap(0, 0, bitmaps[i], display.epd2.WIDTH, display.epd2.HEIGHT, GxEPD_BLACK);
+      }
+      while (display.nextPage());
+      delay(2000);
+    }
+  }
+}
+#endif
+
 #ifdef _GxBitmaps176x264_H_
 void drawBitmaps176x264()
 {
@@ -751,6 +799,37 @@ void drawBitmaps176x264()
   };
 #endif
   if (display.epd2.panel == GxEPD2::GDEW027W3)
+  {
+    for (uint16_t i = 0; i < sizeof(bitmaps) / sizeof(char*); i++)
+    {
+      display.firstPage();
+      do
+      {
+        display.fillScreen(GxEPD_WHITE);
+        display.drawInvertedBitmap(0, 0, bitmaps[i], display.epd2.WIDTH, display.epd2.HEIGHT, GxEPD_BLACK);
+      }
+      while (display.nextPage());
+      delay(2000);
+    }
+  }
+}
+#endif
+
+#ifdef _GxBitmaps240x416_H_
+void drawBitmaps240x416()
+{
+#if !defined(__AVR)
+  const unsigned char* bitmaps[] =
+  {
+    Bitmap240x416_1, Bitmap240x416_2, Bitmap240x416_3
+  };
+#else
+  const unsigned char* bitmaps[] =
+  {
+    Bitmap240x460_1, Bitmap240x460_2, Bitmap240x460_3
+  };
+#endif
+  if (display.epd2.panel == GxEPD2::GDEW0371W7)
   {
     for (uint16_t i = 0; i < sizeof(bitmaps) / sizeof(char*); i++)
     {
@@ -1065,6 +1144,35 @@ void drawBitmaps3c400x300()
         display.fillScreen(GxEPD_WHITE);
         display.drawInvertedBitmap(0, 0, bitmap_pairs[i].black, display.epd2.WIDTH, display.epd2.HEIGHT, GxEPD_BLACK);
         display.drawInvertedBitmap(0, 0, bitmap_pairs[i].red, display.epd2.WIDTH, display.epd2.HEIGHT, GxEPD_RED);
+      }
+      while (display.nextPage());
+      delay(2000);
+    }
+  }
+}
+#endif
+
+#ifdef _GxBitmaps3c800x480_H_
+void drawBitmaps3c800x480()
+{
+#if !defined(__AVR)
+  bitmap_pair bitmap_pairs[] =
+  {
+    {Bitmap3c800x480_1_black, Bitmap3c800x480_1_red}
+  };
+#else
+  bitmap_pair bitmap_pairs[] = {}; // not enough code space
+#endif
+  if (display.epd2.panel == GxEPD2::GDEW075Z08)
+  {
+    for (uint16_t i = 0; i < sizeof(bitmap_pairs) / sizeof(bitmap_pair); i++)
+    {
+      display.firstPage();
+      do
+      {
+        display.fillScreen(GxEPD_WHITE);
+        display.drawBitmap(0, 0, bitmap_pairs[i].black, display.epd2.WIDTH, display.epd2.HEIGHT, GxEPD_BLACK);
+        display.drawBitmap(0, 0, bitmap_pairs[i].red, display.epd2.WIDTH, display.epd2.HEIGHT, GxEPD_RED);
       }
       while (display.nextPage());
       delay(2000);
